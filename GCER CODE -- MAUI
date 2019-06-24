@@ -26,3 +26,17 @@ int main(){ // wait_for_light(0); shut_down_in(119);
     create_disconnect();
     printf("\n This is the END, my only friend");
     return 0;}
+   /////////////////////////////////////////////////////////////////////////////////////////////    
+int counter=0;
+int red=0;
+
+int SNAP(){
+    printf("\nSmile For the CAMERA!\n");
+    camera_open_black();
+    
+		while(red<7&&counter<25) //may need to change counter 2018==35 times
+        {printf("Little RED's entrance");camera_update();
+         	if(get_object_count(0)>0){red=red+1; printf("Red counter loop entered\n");}
+		 msleep(50); printf(" %d counter\n"); counter=counter+1;}
+                                                        
+    camera_close(); printf("done hoe");}                                            
