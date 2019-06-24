@@ -1,0 +1,28 @@
+#include <kipr/botball.h>
+#include <SNAP.h>
+int c=1728; //servo at an angle--closed
+int s=714; // servo straight
+int jd=1376; //motor down
+int ju=251; // joint straight up mid is 853
+int m=0; //mini servo
+int j=1; //joint motor
+
+
+int main(){ // wait_for_light(0); shut_down_in(119);
+    printf("Hello World\n"); create_connect(); create_safe();
+    enable_servos(0);set_servo_position(j,ju); set_servo_position(m,s);
+	 // begining of CAMERA CODE
+ 	SNAP(); if(red>5){printf("\n Burning RED. Stay to warn the others! \n"); 
+                      create_drive_direct(0,0); msleep(3000); printf("\nwaiting. . . waiting\n");}
+    		else{printf("\n No Red. MOVE! \n");}
+	printf("\n o.O");  
+    create_drive_straight(-250); msleep(1075); 
+    create_spin_block(69,45); create_drive_straight(250); msleep(450); 
+    //enter servo and spin to move cubes here/////
+    set_servo_position(j,jd); msleep(500); set_servo_position(m,s); set_servo_position(m,s+125); 
+    set_servo_position(m,s+150); set_servo_position(m,s+175); set_servo_position(m,s+200);
+    set_servo_position(m,s+250);set_servo_position(m,s+275);set_servo_position(m,c); msleep(150);
+    create_spin_block(-69,45); create_spin_block(69,39.75); create_drive_straight(350); msleep(1000);
+    create_disconnect();
+    printf("\n This is the END, my only friend");
+    return 0;}
