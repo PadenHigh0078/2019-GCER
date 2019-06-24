@@ -1,0 +1,13 @@
+#include <kipr/botball.h>
+int c=1728; //servo at an angle--closed
+int s=714; // servo straight
+int jd=1253; //motor down
+int ju=251; // motor straight up
+int m=0; //mini servo
+int j=1; //joint motor
+
+int main(){ // wait_for_light(0); shut_down_in(119);
+    printf("Hello World\n"); enable_servos();set_servo_position(j,890); set_servo_position(m,s);
+    printf("\n All Done! :) \n");
+    return 0;
+}
